@@ -1,12 +1,14 @@
-provider "minikube" {
-  kubernetes_version = "v1.26.3"
+terraform {
+  required_providers {
+    kubernetes = {
+      source = "hashicorp/kubernetes"
+      version = "2.11.0"
+    }
+  }
 }
 
-resource "minikube_cluster" "docker" {
-  driver       = "docker"
-  cluster_name = "terraform-provider-minikube-acc-docker"
-  addons = [
-    "default-storageclass",
-    "storage-provisioner"
-  ]
+provider "kubernetes" {
+  config_path    = "~/.kube/config"
+  config_context = "minikube"
 }
+
