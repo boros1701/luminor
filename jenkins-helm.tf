@@ -14,21 +14,21 @@ resource "helm_release" "jenkins" {
   name       = "jenkins"
   repository = "https://charts.jenkins.io"
   chart      = "jenkins"
-  version    = "3.6.0"
-  namespace  = "jenkins"
+#  version    = "3.6.0"
+#  namespace  = "jenkins"
   timeout    = 600
-  values = [
-    file("values.yaml"),
-  ]
-
-  set {
-    name  = "controller.adminUser"
-    value = "admin"
-  }
-
-  set {
-    name  = ""controller.adminPassword""
-    value = "yfcved44"
-  }
+#  values = [
+#    file("values.yaml"),
+#  ]
+#
+#  set {
+#    name  = "controller.adminUser"
+#    value = "admin"
+#  }
+#
+#  set {
+#    name  = ""controller.adminPassword""
+#    value = "yfcved44"
+#  }
   
 }
