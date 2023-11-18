@@ -15,8 +15,9 @@ provider "minikube" {
 
 resource "minikube_cluster" "docker" {
   driver       = "docker"
-  nodes        = 3
   cluster_name = "terraform-provider-minikube-acc-docker"
+  nodes        = 3
+  namespace    = "jenkins"
   addons = [
     "default-storageclass",
     "storage-provisioner"
