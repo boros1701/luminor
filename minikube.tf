@@ -15,10 +15,13 @@ provider "minikube" {
 
 resource "minikube_cluster" "docker" {
   driver       = "docker"
+  container_runtime = "docker"
   cluster_name = "terraform-provider-minikube-acc-docker"
   nodes        = 3
+  cni          = "bridge"
   namespace    = "jenkins"
   addons = [
+    "ingress",
     "default-storageclass",
     "storage-provisioner"
   ]
