@@ -239,9 +239,10 @@ controller:
   # List of plugins to be install during Jenkins controller start
   installPlugins:
     - kubernetes:4144.vfd176ec18694
-    #- workflow-aggregator:581.v0c46fa_697ffd
-    #- git:4.11.3
+    - workflow-aggregator:596.v8c21c963d92d
+    - git:5.2.1
     - configuration-as-code:1738.v2d8b_a_b_8a_54b_1
+    - gradle:2.9
 
   # Set to false to download the minimum required version of all dependencies.
   installLatestPlugins: true
@@ -598,7 +599,7 @@ agent:
   maxRequestsPerHostStr: "32"
   namespace:
   image: "jenkins/inbound-agent"
-  tag: "4.11.2-4"
+  tag: "latest-alpine-jdk11"
   workingDir: "/home/jenkins/agent"
   nodeUsageMode: "NORMAL"
   customJenkinsLabels: []

@@ -16,7 +16,7 @@ provider "minikube" {
 resource "minikube_cluster" "docker" {
   driver       = "docker"
   container_runtime = "docker"
-  cluster_name = "terraform-provider-minikube-acc-docker"
+  cluster_name = "terraform-provider-minikube-acs-docker"
   cni          = "bridge"
   namespace    = "jenkins"
   addons = [
@@ -25,3 +25,5 @@ resource "minikube_cluster" "docker" {
     "storage-provisioner"
   ]
 }
+
+
