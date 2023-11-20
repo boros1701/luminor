@@ -599,7 +599,7 @@ agent:
   maxRequestsPerHostStr: "32"
   namespace:
   image: "jenkins/inbound-agent"
-  tag: "latest-alpine-jdk11"
+  tag: "latest-alpine-jdk17"
   workingDir: "/home/jenkins/agent"
   nodeUsageMode: "NORMAL"
   customJenkinsLabels: []
@@ -612,11 +612,11 @@ agent:
   runAsGroup:
   resources:
     requests:
-      cpu: "512m"
-      memory: "512Mi"
+      cpu: "1024m"
+      memory: "4096Mi"
     limits:
-      cpu: "512m"
-      memory: "512Mi"
+      cpu: "2048m"
+      memory: "8192Mi"
   # You may want to change this to true while testing a new image
   alwaysPullImage: false
   # Controls how agent pods are retained after the Jenkins build completes
